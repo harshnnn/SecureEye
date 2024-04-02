@@ -1,113 +1,130 @@
 import Image from "next/image";
+import { Globe } from "../../components/ui/globe";
+import { GlobeDemo } from "../components/myglobe";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input"
+import div2 from '../../public/div2.png'
+//import { LayoutGridDemo } from "@/components/mylayoutgrid";
+import { CardHoverEffectDemo } from "@/components/myhovereffect";
+
+
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <nav className="flex flex-col lg:flex-row lg:justify-between lg:items-center bg-dark-800 text-white py-4 px-6">
+        {/* Left side */}
+        <div className="flex items-center mb-4 lg:mb-0">
+          <h1 className="text-lg font-bold mr-4">SecureEye</h1>
+        </div>
+
+        {/* Middle section */}
+        <div className="flex items-center justify-center lg:justify-start space-x-6 mb-4 lg:mb-0">
+          <a href="#" className="hover:text-gray-300">Dashboard</a>
+          <a href="#" className="hover:text-gray-300">Messaging</a>
+          <a href="#" className="hover:text-gray-300">Notification</a>
+          <a href="#" className="hover:text-gray-300">Help Center</a>
+        </div>
+
+        {/* Right side */}
+        <div className="flex justify-center lg:justify-end items-center space-x-4">
+          <button className="hover:bg-slate-800 text-white border border-white font-bold py-2 px-4 rounded">Admin</button>
+          <button className="bg-white hover:bg-slate-600 text-black font-bold py-2 px-4 rounded">Add Camera</button>
+        </div>
+      </nav>
+      <div className="flex flex-col lg:flex-row justify-center items-center">
+        <div className="flex-1 p-6 lg:p-20">
+          <h1 className="text-xl lg:text-3xl font-bold text-white text-center lg:text-left">Proactive Geo-Tagging System <br /> for Private Cameras</h1>
+          <p className="text-sm lg:text-base pt-2 text-white text-center lg:text-left">GeoCamGuard is a user-friendly geo-tagging system <br /> designed to enhance law enforcement access to crucial footage, <br /> providing real-time alerts and ensuring swift response for  <br /> improved public safety.</p>
+        </div>
+        <div className="flex-1 mt-0">
+          <GlobeDemo />
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="flex flex-col lg:flex-row justify-center items-center bg-white text-black pt-20">
+        {/* Text div */}
+        <div className="flex-1 p-6 lg:p-20 lg:order-1 px-5">
+          <h2 className="text-xl lg:text-3xl font-bold text-center lg:text-left">Our Geo-Tag Process</h2>
+          <p className="text-sm pt-5">Simple, secure, and efficient geo-tagging.</p>
+          <Button variant="outline" className="text-white mt-10">Add Camera</Button>
+        </div>
+
+        {/* Image div */}
+        <div className="flex-1 div2-img h-full w-full lg:order-2 rounded-md mr-10" style={{ backgroundImage: `url(${div2.src})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '200px', width: '200px' }}>
+        </div>
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="flex flex-col lg:flex-row justify-center items-center text-center bg-white text-black p-20">
+        <div className="w-1/3">
+          <h2 className="font-semibold text-lg">Geo-Location</h2>
+          <p className="text-sm">Pinpoint accuracy in geo-tagging.</p>
+        </div>
+        <div className="w-1/3">
+          <h2 className="font-semibold text-lg">Privacy Control</h2>
+          <p className="text-sm">You own and control your data.</p></div>
+        <div className="w-1/3">
+          <h2 className="font-semibold text-lg">Easy Integration</h2>
+          <p className="text-sm">Works with your existing cameras.</p>
+        </div>
       </div>
-    </main>
+
+      <div className="bg-white w-full text-center" >
+        <div className="flex bg-black mx-60 rounded-lg text-white align-center justify-center flex-col text-center p-10 ">
+          <h2 className="text-3xl font-semibold">Ready to Geo-Tag?</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur</p>
+          <Button className="pt-10">Add Camera</Button>
+        </div>
+      </div>
+
+      <div className="bg-white">
+        <div className="pt-10 p-20">
+          <h2 className="text-3xl font-bold">Secure Eye in Action</h2>
+          <p className="text-sm pt-2">Lorem ipsum dolor sit amet, consectetur</p>
+        </div>
+
+        <div className="w-full">
+          {/* <LayoutGridDemo/> */}
+
+          <CardHoverEffectDemo />
+        </div>
+      </div>
+
+      <div className="w-full font-thin text-white  p-16 flex flex-wrap justify-center gap-8 lg:justify-between lg:gap-0 lg:w-auto">
+        <div className="flex flex-col text-sm lg:mb-0 p-1">
+          <h3 className="mb-4 font-semibold text-xl">Company</h3>
+          <p >Our Story</p>
+          <p>Join Up</p>
+          <p>Latest Updates</p>
+        </div>
+        <div className="flex flex-col text-sm mb-8 lg:mb-0 p-1">
+          <h3 className="mb-4 font-semibold text-xl">Product Features</h3>
+          <p>Feature 1</p>
+          <p>Feature 2</p>
+          <p>Feature 3</p>
+        </div>
+        <div className="flex flex-col text-sm mb-8 lg:mb-0 p-1">
+          <h3 className="mb-4 font-semibold text-xl">Follow Us</h3>
+          <p>Facebook</p>
+          <p>Twitter</p>
+          <p>Instagram</p>
+        </div>
+        <div className="flex flex-col text-sm mb-8 lg:mb-0 p-1">
+          <h3 className="mb-4 font-semibold text-xl">Join our Newsletter</h3>
+          <div className="newsletter-form w-full text-white flex justify-center">
+            <div className="flex flex-col">
+              <h3>Get tips and updates on maximizing your geo-tagging.</h3>
+              <div className="flex w-full max-w-sm items-center py-5 space-x-2 border-8 border-indigo-900 outline-8	outline-white	">
+                <Input type="email" placeholder="Email" className="border-8	bg-white border-indigo-900	shadow-lg outline-8	outline-white	" />
+                <Button type="submit" >Subscribe</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </>
   );
 }
