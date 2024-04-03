@@ -3,13 +3,11 @@ import { useState, useEffect } from 'react';
 import { Map, View } from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
-import BingMaps from 'ol/source/BingMaps.js';
 import Feature from 'ol/Feature';
 import Point from 'ol/geom/Point';
 import { fromLonLat } from 'ol/proj';
 import { Vector as VectorLayer } from 'ol/layer';
 import { Vector as VectorSource } from 'ol/source';
-import { Icon } from 'ol/style';
 
 const AddCamera = () => {
   const [formData, setFormData] = useState({
@@ -35,17 +33,17 @@ const AddCamera = () => {
 
     // Clean up OpenLayers map on component unmount
     return () => {
-      map.setTarget(null);
+      map.setTarget('');
     };
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     // Implement your form submission logic here
     console.log('Form submitted:', formData);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: { target: { name: any; value: any; }; }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
