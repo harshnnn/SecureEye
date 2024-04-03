@@ -1,4 +1,5 @@
 //import Image from "next/image";
+
 import { Globe } from "../../components/ui/globe";
 import { GlobeDemo } from "../components/myglobe";
 import { Button } from "@/components/ui/button";
@@ -7,15 +8,16 @@ import div2 from '../../public/div2.png'
 import { CardHoverEffectDemo } from "@/components/myhovereffect";
 import { TracingBeam } from "../../components/ui/tracing-beam";
 import { AnimatedTooltipPreview } from "@/components/tooltip";
+import { Suspense } from "react";
+import Link from "next/link";
 
 
 export default function Home() {
 
-
-
+ 
   return (
     <>
-       
+
       <TracingBeam>
         <nav className="flex flex-col lg:flex-row lg:justify-between lg:items-center bg-dark-800 text-white py-4 px-6">
           {/* Left side */}
@@ -34,7 +36,11 @@ export default function Home() {
           {/* Right side */}
           <div className="flex justify-center lg:justify-end items-center space-x-4">
             <button className="hover:bg-slate-800 text-white border border-white font-bold py-2 px-4 rounded">Admin</button>
-            <button className="bg-white hover:bg-slate-600 text-black font-bold py-2 px-4 rounded">Add Camera</button>
+            <Link href="/camera">
+              <button className="bg-white hover:bg-slate-600 text-black font-bold py-2 px-4 rounded" >
+                Add Camera
+              </button>
+            </Link>
           </div>
         </nav>
 
@@ -44,7 +50,13 @@ export default function Home() {
             <p className="text-sm lg:text-base pt-2 text-white text-center lg:text-left">GeoCamGuard is a user-friendly geo-tagging system <br /> designed to enhance law enforcement access to crucial footage, <br /> providing real-time alerts and ensuring swift response for  <br /> improved public safety.</p>
           </div>
           <div className="flex-1 w-4/5 mr-2 h-1/2 mt-0">
-            <GlobeDemo />
+            <Suspense fallback={
+              <div className="flex h-full w-full  bg-white justify-center items-center">
+                <div className="border-4 border-gray-200 border-t-4 border-t-gray-700 rounded-full w-12 h-12 text-white animate-spin">Loaging</div>
+              </div>
+            }>
+              <GlobeDemo />
+            </Suspense>
           </div>
         </div>
 
