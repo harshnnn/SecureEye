@@ -1,4 +1,4 @@
-import Image from "next/image";
+//import Image from "next/image";
 import { Globe } from "../../components/ui/globe";
 import { GlobeDemo } from "../components/myglobe";
 import { Button } from "@/components/ui/button";
@@ -7,20 +7,15 @@ import div2 from '../../public/div2.png'
 import { CardHoverEffectDemo } from "@/components/myhovereffect";
 import { TracingBeam } from "../../components/ui/tracing-beam";
 import { AnimatedTooltipPreview } from "@/components/tooltip";
-import { useToast } from "@/components/ui/use-toast"
 
 
 export default function Home() {
 
-  // const { toast } = useToast()
-  // const handleSubscribe = () => {
-  //   toast({
-  //     description: "Your message has been sent.",
-  //   });
-  // };
+
 
   return (
     <>
+       
       <TracingBeam>
         <nav className="flex flex-col lg:flex-row lg:justify-between lg:items-center bg-dark-800 text-white py-4 px-6">
           {/* Left side */}
@@ -48,7 +43,7 @@ export default function Home() {
             <h1 className="text-xl lg:text-3xl font-bold text-white text-center lg:text-left">Proactive Geo-Tagging System <br /> for Private Cameras</h1>
             <p className="text-sm lg:text-base pt-2 text-white text-center lg:text-left">GeoCamGuard is a user-friendly geo-tagging system <br /> designed to enhance law enforcement access to crucial footage, <br /> providing real-time alerts and ensuring swift response for  <br /> improved public safety.</p>
           </div>
-          <div className="flex-1 mt-0">
+          <div className="flex-1 w-4/5 mr-2 h-1/2 mt-0">
             <GlobeDemo />
           </div>
         </div>
@@ -137,7 +132,6 @@ export default function Home() {
                 <Button
                   type="submit"
                   variant="outline"
-                 // onClick={handleSubscribe}
 
                 >
                   Subscribe
